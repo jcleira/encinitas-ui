@@ -1,0 +1,5 @@
+{
+  "/page": "app/page.js",
+  "/clusters/page": "app/clusters/page.js",
+  "/counter/page": "app/counter/page.js"
+}
