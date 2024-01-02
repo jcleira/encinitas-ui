@@ -742,12 +742,38 @@ self.__RSC_MANIFEST={
         "async": false
       }
     },
+    "(app-client)/./components/dashboard/dashboard-feature.tsx": {
+      "*": {
+        "id": "(sc_client)/./components/dashboard/dashboard-feature.tsx",
+        "name": "*",
+        "chunks": [
+          "app/page:static/chunks/app/page.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./components/dashboard/dashboard-feature.tsx",
+        "name": "",
+        "chunks": [
+          "app/page:static/chunks/app/page.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./components/dashboard/dashboard-feature.tsx",
+        "name": "default",
+        "chunks": [
+          "app/page:static/chunks/app/page.js"
+        ],
+        "async": false
+      }
+    },
     "(app-client)/../node_modules/next/dist/client/link.js": {
       "*": {
         "id": "(sc_client)/../node_modules/next/dist/client/link.js",
         "name": "*",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -755,7 +781,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/../node_modules/next/dist/client/link.js",
         "name": "",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -763,7 +789,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/../node_modules/next/dist/client/link.js",
         "name": "default",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       }
@@ -773,7 +799,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/../node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "*",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -781,7 +807,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/../node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -789,7 +815,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/../node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "suspense",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -797,7 +823,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/../node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
         "name": "NoSSR",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       }
@@ -833,7 +859,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-data-access.tsx",
         "name": "*",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -841,7 +867,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-data-access.tsx",
         "name": "",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -849,7 +875,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-data-access.tsx",
         "name": "useGetBalance",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -857,7 +883,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-data-access.tsx",
         "name": "useGetSignatures",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -865,7 +891,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-data-access.tsx",
         "name": "useGetTokenAccountBalance",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -873,7 +899,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-data-access.tsx",
         "name": "useGetTokenAccounts",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -881,7 +907,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-data-access.tsx",
         "name": "useRequestAirdrop",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -889,7 +915,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-data-access.tsx",
         "name": "useTransferSol",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       }
@@ -899,7 +925,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-ui.tsx",
         "name": "*",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -907,7 +933,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-ui.tsx",
         "name": "",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -915,7 +941,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-ui.tsx",
         "name": "AccountBalance",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -923,7 +949,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-ui.tsx",
         "name": "AccountBalanceCheck",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -931,7 +957,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-ui.tsx",
         "name": "AccountButtons",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -939,7 +965,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-ui.tsx",
         "name": "AccountChecker",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -947,7 +973,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-ui.tsx",
         "name": "AccountTokenBalance",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -955,7 +981,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-ui.tsx",
         "name": "AccountTokens",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -963,7 +989,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/account/account-ui.tsx",
         "name": "AccountTransactions",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       }
@@ -973,7 +999,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/cluster/cluster-data-access.tsx",
         "name": "*",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -981,7 +1007,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/cluster/cluster-data-access.tsx",
         "name": "",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -989,7 +1015,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/cluster/cluster-data-access.tsx",
         "name": "ClusterNetwork",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -997,7 +1023,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/cluster/cluster-data-access.tsx",
         "name": "ClusterProvider",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1005,7 +1031,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/cluster/cluster-data-access.tsx",
         "name": "defaultClusters",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1013,7 +1039,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/cluster/cluster-data-access.tsx",
         "name": "toWalletAdapterNetwork",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1021,7 +1047,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/cluster/cluster-data-access.tsx",
         "name": "useCluster",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       }
@@ -1031,7 +1057,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/cluster/cluster-ui.tsx",
         "name": "*",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1039,7 +1065,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/cluster/cluster-ui.tsx",
         "name": "",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1047,7 +1073,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/cluster/cluster-ui.tsx",
         "name": "ClusterChecker",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1055,7 +1081,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/cluster/cluster-ui.tsx",
         "name": "ClusterUiModal",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1063,7 +1089,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/cluster/cluster-ui.tsx",
         "name": "ClusterUiSelect",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1071,7 +1097,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/cluster/cluster-ui.tsx",
         "name": "ClusterUiTable",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1079,7 +1105,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/cluster/cluster-ui.tsx",
         "name": "ExplorerLink",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       }
@@ -1089,7 +1115,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/solana/solana-provider.tsx",
         "name": "*",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1097,7 +1123,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/solana/solana-provider.tsx",
         "name": "",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1105,7 +1131,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/solana/solana-provider.tsx",
         "name": "SolanaProvider",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1113,7 +1139,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/solana/solana-provider.tsx",
         "name": "WalletButton",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1121,7 +1147,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/solana/solana-provider.tsx",
         "name": "useAnchorProvider",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       }
@@ -1131,7 +1157,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/ui/ui-layout.tsx",
         "name": "*",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1139,7 +1165,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/ui/ui-layout.tsx",
         "name": "",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1147,7 +1173,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/ui/ui-layout.tsx",
         "name": "AppHero",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1155,7 +1181,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/ui/ui-layout.tsx",
         "name": "AppModal",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1163,7 +1189,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/ui/ui-layout.tsx",
         "name": "UiLayout",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1171,7 +1197,7 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/ui/ui-layout.tsx",
         "name": "ellipsify",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       },
@@ -1179,33 +1205,33 @@ self.__RSC_MANIFEST={
         "id": "(sc_client)/./components/ui/ui-layout.tsx",
         "name": "useTransactionToast",
         "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+          "app/clusters/page:static/chunks/app/clusters/page.js"
         ],
         "async": false
       }
     },
-    "(app-client)/./components/cluster/cluster-feature.tsx": {
+    "(app-client)/./components/account/account-list-feature.tsx": {
       "*": {
-        "id": "(sc_client)/./components/cluster/cluster-feature.tsx",
+        "id": "(sc_client)/./components/account/account-list-feature.tsx",
         "name": "*",
         "chunks": [
-          "app/clusters/page:static/chunks/app/clusters/page.js"
+          "app/account/page:static/chunks/app/account/page.js"
         ],
         "async": false
       },
       "": {
-        "id": "(sc_client)/./components/cluster/cluster-feature.tsx",
+        "id": "(sc_client)/./components/account/account-list-feature.tsx",
         "name": "",
         "chunks": [
-          "app/clusters/page:static/chunks/app/clusters/page.js"
+          "app/account/page:static/chunks/app/account/page.js"
         ],
         "async": false
       },
       "default": {
-        "id": "(sc_client)/./components/cluster/cluster-feature.tsx",
+        "id": "(sc_client)/./components/account/account-list-feature.tsx",
         "name": "default",
         "chunks": [
-          "app/clusters/page:static/chunks/app/clusters/page.js"
+          "app/account/page:static/chunks/app/account/page.js"
         ],
         "async": false
       }
@@ -1304,58 +1330,6 @@ self.__RSC_MANIFEST={
         "async": false
       }
     },
-    "(app-client)/./components/dashboard/dashboard-feature.tsx": {
-      "*": {
-        "id": "(sc_client)/./components/dashboard/dashboard-feature.tsx",
-        "name": "*",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./components/dashboard/dashboard-feature.tsx",
-        "name": "",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./components/dashboard/dashboard-feature.tsx",
-        "name": "default",
-        "chunks": [
-          "app/page:static/chunks/app/page.js"
-        ],
-        "async": false
-      }
-    },
-    "(app-client)/./components/account/account-list-feature.tsx": {
-      "*": {
-        "id": "(sc_client)/./components/account/account-list-feature.tsx",
-        "name": "*",
-        "chunks": [
-          "app/account/page:static/chunks/app/account/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./components/account/account-list-feature.tsx",
-        "name": "",
-        "chunks": [
-          "app/account/page:static/chunks/app/account/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./components/account/account-list-feature.tsx",
-        "name": "default",
-        "chunks": [
-          "app/account/page:static/chunks/app/account/page.js"
-        ],
-        "async": false
-      }
-    },
     "(app-client)/./components/account/account-detail-feature.tsx": {
       "*": {
         "id": "(sc_client)/./components/account/account-detail-feature.tsx",
@@ -1381,6 +1355,32 @@ self.__RSC_MANIFEST={
         ],
         "async": false
       }
+    },
+    "(app-client)/./components/cluster/cluster-feature.tsx": {
+      "*": {
+        "id": "(sc_client)/./components/cluster/cluster-feature.tsx",
+        "name": "*",
+        "chunks": [
+          "app/clusters/page:static/chunks/app/clusters/page.js"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./components/cluster/cluster-feature.tsx",
+        "name": "",
+        "chunks": [
+          "app/clusters/page:static/chunks/app/clusters/page.js"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./components/cluster/cluster-feature.tsx",
+        "name": "default",
+        "chunks": [
+          "app/clusters/page:static/chunks/app/clusters/page.js"
+        ],
+        "async": false
+      }
     }
   },
   "edgeSSRModuleMapping": {},
@@ -1388,17 +1388,17 @@ self.__RSC_MANIFEST={
     "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/layout": [
       "static/css/app/layout.css"
     ],
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/clusters/page": [
-      "static/css/app/clusters/page.css"
+    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/account/page": [
+      "static/css/app/account/page.css"
     ],
     "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/counter/page": [
       "static/css/app/counter/page.css"
     ],
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/account/page": [
-      "static/css/app/account/page.css"
-    ],
     "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/account/[address]/page": [
       "static/css/app/account/[address]/page.css"
+    ],
+    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/clusters/page": [
+      "static/css/app/clusters/page.css"
     ]
   },
   "clientModules": {
@@ -3098,15 +3098,39 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
+    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/dashboard/dashboard-feature.tsx": {
+      "id": "(app-client)/./components/dashboard/dashboard-feature.tsx",
+      "name": "*",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/dashboard/dashboard-feature.tsx#": {
+      "id": "(app-client)/./components/dashboard/dashboard-feature.tsx",
+      "name": "",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
+    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/dashboard/dashboard-feature.tsx#default": {
+      "id": "(app-client)/./components/dashboard/dashboard-feature.tsx",
+      "name": "default",
+      "chunks": [
+        "app/page:static/chunks/app/page.js"
+      ],
+      "async": false
+    },
     "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/node_modules/@solana/wallet-adapter-react-ui/styles.css#": {
       "id": "null",
       "name": "default",
       "chunks": [
         "static/css/app/layout.css",
-        "static/css/app/clusters/page.css",
-        "static/css/app/counter/page.css",
         "static/css/app/account/page.css",
-        "static/css/app/account/[address]/page.css"
+        "static/css/app/counter/page.css",
+        "static/css/app/account/[address]/page.css",
+        "static/css/app/clusters/page.css"
       ]
     },
     "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/global.css#": {
@@ -3120,7 +3144,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/../node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3128,7 +3152,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/../node_modules/next/dist/client/link.js",
       "name": "*",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3136,7 +3160,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/../node_modules/next/dist/client/link.js",
       "name": "",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3144,7 +3168,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/../node_modules/next/dist/client/link.js",
       "name": "",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3152,7 +3176,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/../node_modules/next/dist/client/link.js",
       "name": "default",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3160,7 +3184,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/../node_modules/next/dist/client/link.js",
       "name": "default",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3168,7 +3192,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/../node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "*",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3176,7 +3200,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/../node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "*",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3184,7 +3208,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/../node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3192,7 +3216,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/../node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3200,7 +3224,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/../node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "suspense",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3208,7 +3232,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/../node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "suspense",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3216,7 +3240,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/../node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "NoSSR",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3224,7 +3248,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/../node_modules/next/dist/shared/lib/lazy-dynamic/dynamic-no-ssr.js",
       "name": "NoSSR",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3256,7 +3280,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-data-access.tsx",
       "name": "*",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3264,7 +3288,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-data-access.tsx",
       "name": "",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3272,7 +3296,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-data-access.tsx",
       "name": "useGetBalance",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3280,7 +3304,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-data-access.tsx",
       "name": "useGetSignatures",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3288,7 +3312,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-data-access.tsx",
       "name": "useGetTokenAccountBalance",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3296,7 +3320,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-data-access.tsx",
       "name": "useGetTokenAccounts",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3304,7 +3328,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-data-access.tsx",
       "name": "useRequestAirdrop",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3312,7 +3336,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-data-access.tsx",
       "name": "useTransferSol",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3320,7 +3344,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-ui.tsx",
       "name": "*",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3328,7 +3352,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-ui.tsx",
       "name": "",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3336,7 +3360,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-ui.tsx",
       "name": "AccountBalance",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3344,7 +3368,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-ui.tsx",
       "name": "AccountBalanceCheck",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3352,7 +3376,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-ui.tsx",
       "name": "AccountButtons",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3360,7 +3384,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-ui.tsx",
       "name": "AccountChecker",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3368,7 +3392,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-ui.tsx",
       "name": "AccountTokenBalance",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3376,7 +3400,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-ui.tsx",
       "name": "AccountTokens",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3384,7 +3408,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/account/account-ui.tsx",
       "name": "AccountTransactions",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3392,7 +3416,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/cluster/cluster-data-access.tsx",
       "name": "*",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3400,7 +3424,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/cluster/cluster-data-access.tsx",
       "name": "",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3408,7 +3432,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/cluster/cluster-data-access.tsx",
       "name": "ClusterNetwork",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3416,7 +3440,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/cluster/cluster-data-access.tsx",
       "name": "ClusterProvider",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3424,7 +3448,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/cluster/cluster-data-access.tsx",
       "name": "defaultClusters",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3432,7 +3456,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/cluster/cluster-data-access.tsx",
       "name": "toWalletAdapterNetwork",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3440,7 +3464,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/cluster/cluster-data-access.tsx",
       "name": "useCluster",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3448,7 +3472,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/cluster/cluster-ui.tsx",
       "name": "*",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3456,7 +3480,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/cluster/cluster-ui.tsx",
       "name": "",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3464,7 +3488,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/cluster/cluster-ui.tsx",
       "name": "ClusterChecker",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3472,7 +3496,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/cluster/cluster-ui.tsx",
       "name": "ClusterUiModal",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3480,7 +3504,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/cluster/cluster-ui.tsx",
       "name": "ClusterUiSelect",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3488,7 +3512,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/cluster/cluster-ui.tsx",
       "name": "ClusterUiTable",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3496,7 +3520,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/cluster/cluster-ui.tsx",
       "name": "ExplorerLink",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3504,7 +3528,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/solana/solana-provider.tsx",
       "name": "*",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3512,7 +3536,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/solana/solana-provider.tsx",
       "name": "",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3520,7 +3544,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/solana/solana-provider.tsx",
       "name": "SolanaProvider",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3528,7 +3552,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/solana/solana-provider.tsx",
       "name": "WalletButton",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3536,7 +3560,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/solana/solana-provider.tsx",
       "name": "useAnchorProvider",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3544,7 +3568,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/ui/ui-layout.tsx",
       "name": "*",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3552,7 +3576,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/ui/ui-layout.tsx",
       "name": "",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3560,7 +3584,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/ui/ui-layout.tsx",
       "name": "AppHero",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3568,7 +3592,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/ui/ui-layout.tsx",
       "name": "AppModal",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3576,7 +3600,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/ui/ui-layout.tsx",
       "name": "UiLayout",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3584,7 +3608,7 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/ui/ui-layout.tsx",
       "name": "ellipsify",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
@@ -3592,31 +3616,31 @@ self.__RSC_MANIFEST={
       "id": "(app-client)/./components/ui/ui-layout.tsx",
       "name": "useTransactionToast",
       "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     },
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/cluster/cluster-feature.tsx": {
-      "id": "(app-client)/./components/cluster/cluster-feature.tsx",
+    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/account/account-list-feature.tsx": {
+      "id": "(app-client)/./components/account/account-list-feature.tsx",
       "name": "*",
       "chunks": [
-        "app/clusters/page:static/chunks/app/clusters/page.js"
+        "app/account/page:static/chunks/app/account/page.js"
       ],
       "async": false
     },
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/cluster/cluster-feature.tsx#": {
-      "id": "(app-client)/./components/cluster/cluster-feature.tsx",
+    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/account/account-list-feature.tsx#": {
+      "id": "(app-client)/./components/account/account-list-feature.tsx",
       "name": "",
       "chunks": [
-        "app/clusters/page:static/chunks/app/clusters/page.js"
+        "app/account/page:static/chunks/app/account/page.js"
       ],
       "async": false
     },
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/cluster/cluster-feature.tsx#default": {
-      "id": "(app-client)/./components/cluster/cluster-feature.tsx",
+    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/account/account-list-feature.tsx#default": {
+      "id": "(app-client)/./components/account/account-list-feature.tsx",
       "name": "default",
       "chunks": [
-        "app/clusters/page:static/chunks/app/clusters/page.js"
+        "app/account/page:static/chunks/app/account/page.js"
       ],
       "async": false
     },
@@ -3708,54 +3732,6 @@ self.__RSC_MANIFEST={
       ],
       "async": false
     },
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/dashboard/dashboard-feature.tsx": {
-      "id": "(app-client)/./components/dashboard/dashboard-feature.tsx",
-      "name": "*",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/dashboard/dashboard-feature.tsx#": {
-      "id": "(app-client)/./components/dashboard/dashboard-feature.tsx",
-      "name": "",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/dashboard/dashboard-feature.tsx#default": {
-      "id": "(app-client)/./components/dashboard/dashboard-feature.tsx",
-      "name": "default",
-      "chunks": [
-        "app/page:static/chunks/app/page.js"
-      ],
-      "async": false
-    },
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/account/account-list-feature.tsx": {
-      "id": "(app-client)/./components/account/account-list-feature.tsx",
-      "name": "*",
-      "chunks": [
-        "app/account/page:static/chunks/app/account/page.js"
-      ],
-      "async": false
-    },
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/account/account-list-feature.tsx#": {
-      "id": "(app-client)/./components/account/account-list-feature.tsx",
-      "name": "",
-      "chunks": [
-        "app/account/page:static/chunks/app/account/page.js"
-      ],
-      "async": false
-    },
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/account/account-list-feature.tsx#default": {
-      "id": "(app-client)/./components/account/account-list-feature.tsx",
-      "name": "default",
-      "chunks": [
-        "app/account/page:static/chunks/app/account/page.js"
-      ],
-      "async": false
-    },
     "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/account/account-detail-feature.tsx": {
       "id": "(app-client)/./components/account/account-detail-feature.tsx",
       "name": "*",
@@ -3777,6 +3753,30 @@ self.__RSC_MANIFEST={
       "name": "default",
       "chunks": [
         "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
+      ],
+      "async": false
+    },
+    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/cluster/cluster-feature.tsx": {
+      "id": "(app-client)/./components/cluster/cluster-feature.tsx",
+      "name": "*",
+      "chunks": [
+        "app/clusters/page:static/chunks/app/clusters/page.js"
+      ],
+      "async": false
+    },
+    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/cluster/cluster-feature.tsx#": {
+      "id": "(app-client)/./components/cluster/cluster-feature.tsx",
+      "name": "",
+      "chunks": [
+        "app/clusters/page:static/chunks/app/clusters/page.js"
+      ],
+      "async": false
+    },
+    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/cluster/cluster-feature.tsx#default": {
+      "id": "(app-client)/./components/cluster/cluster-feature.tsx",
+      "name": "default",
+      "chunks": [
+        "app/clusters/page:static/chunks/app/clusters/page.js"
       ],
       "async": false
     }

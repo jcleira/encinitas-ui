@@ -1,31 +1,23 @@
 self.__RSC_CSS_MANIFEST={
   "cssImports": {
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/counter/page.tsx": [
-      "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/node_modules/@solana/wallet-adapter-react-ui/styles.css"
-    ],
     "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/layout.tsx": [
       "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/global.css",
-      "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/node_modules/@solana/wallet-adapter-react-ui/styles.css"
-    ],
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/clusters/page.tsx": [
       "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/node_modules/@solana/wallet-adapter-react-ui/styles.css"
     ],
     "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/account/page.tsx": [
       "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/node_modules/@solana/wallet-adapter-react-ui/styles.css"
     ],
+    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/counter/page.tsx": [
+      "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/node_modules/@solana/wallet-adapter-react-ui/styles.css"
+    ],
     "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/account/[address]/page.tsx": [
+      "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/node_modules/@solana/wallet-adapter-react-ui/styles.css"
+    ],
+    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/clusters/page.tsx": [
       "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/node_modules/@solana/wallet-adapter-react-ui/styles.css"
     ]
   },
   "cssModules": {
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/counter/page": [
-      "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/global.css",
-      "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/node_modules/@solana/wallet-adapter-react-ui/styles.css"
-    ],
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/clusters/page": [
-      "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/global.css",
-      "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/node_modules/@solana/wallet-adapter-react-ui/styles.css"
-    ],
     "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/page": [
       "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/global.css",
       "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/node_modules/@solana/wallet-adapter-react-ui/styles.css"
@@ -34,7 +26,15 @@ self.__RSC_CSS_MANIFEST={
       "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/global.css",
       "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/node_modules/@solana/wallet-adapter-react-ui/styles.css"
     ],
+    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/counter/page": [
+      "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/global.css",
+      "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/node_modules/@solana/wallet-adapter-react-ui/styles.css"
+    ],
     "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/account/[address]/page": [
+      "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/global.css",
+      "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/node_modules/@solana/wallet-adapter-react-ui/styles.css"
+    ],
+    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/clusters/page": [
       "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/global.css",
       "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/node_modules/@solana/wallet-adapter-react-ui/styles.css"
     ]

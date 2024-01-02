@@ -30,14 +30,18 @@ export function UiLayout({ children }: { children: ReactNode }) {
   });
   */
 
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then((registration: ServiceWorkerRegistration) => {
-        console.log('RPC Interceptor Service Worker Registered');
-      })
-      .catch((error: any) => {
-        console.log('Service Worker registration failed:', error);
-      });
+  if (typeof window !== "undefined") {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then((registration: ServiceWorkerRegistration) => {
+          console.log('RPC Interceptor Service Worker Registered');
+        })
+        .catch((error: any) => {
+          console.log('Service Worker registration failed:', error);
+        });
+    } else {
+      console.log('Service Workers are not supported in this browser.');
+    }
   } else {
     console.log('Service Workers are not supported in this browser.');
   }
