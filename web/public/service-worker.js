@@ -1,26 +1,26 @@
 self.addEventListener('fetch', function(event) {
   console.log('Handling fetch event for', event.request.url);
-    const requestClone = event.request.clone();
+  const requestClone = event.request.clone();
 
-    event.respondWith(
-      fetch(event.request).then(response => {
-        const requestUrl = new URL(event.request.url);
-        // Only targeting requests to solana.com, this will not work on localhost
-        // but also this won't capture any other API calls to other domains that the
-        // dApp may make.
-        if (requestUrl.hostname === 'solana.com') {
-          const uniqueId = Date.now().toString(36) + Math.random().toString(36).substr(2);
-          const responseClone = response.clone();
-          logRequest(uniqueId, event, requestClone);
-          logResponse(uniqueId, event, responseClone);
-        }
+  event.respondWith(
+    fetch(event.request).then(response => {
+      const requestUrl = new URL(event.request.url);
+      console.log('Request URL:', requestUrl.hostname);
+      // Only targeting requests to solana.com, this will not work on localhost
+      // but also this won't capture any other API calls to other domains that the
+      // dApp may make.
+      if (/\.solana\.com$/.test(requestUrl.hostname)) {
+        const uniqueId = Date.now().toString(36) + Math.random().toString(36).substr(2);
+        const responseClone = response.clone();
+        logRequest(uniqueId, event, requestClone);
+        logResponse(uniqueId, event, responseClone);
+      }
 
-        return response;
-      }).catch(error => {
-        console.error('Fetch error:', error);
-      })
-    );
-  }
+      return response;
+    }).catch(error => {
+      console.error('Fetch error:', error);
+    })
+  );
 });
 
 function logRequest(uniqueId, event, request) {
