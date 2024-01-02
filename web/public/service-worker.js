@@ -6,7 +6,7 @@ self.addEventListener('fetch', function(event) {
     fetch(event.request).then(response => {
       const responseClone = response.clone();
       logRequest(uniqueId, event, requestClone);
-      logResponse(uniqueId, responseClone);
+      logResponse(uniqueId, event, responseClone);
 
       return response;
     }).catch(error => {
@@ -18,15 +18,29 @@ self.addEventListener('fetch', function(event) {
 function logRequest(uniqueId, event, request) {
   request.text().then(body => {
     const requestData = {
-      id: uniqueId,
-      clientId: event.clientId,
-      replacesClientId: event.replacesClientId,
-      resultingClientId: event.resultingClientId,
-      url: request.url,
-      method: request.method,
-      headers: [...request.headers.entries()],
-      body: body,
-      referrer: request.referrer
+      event: {
+        id: uniqueId,
+        clientId: event.clientId,
+        handled: event.handled,
+        replacesClientId: event.replacesClientId,
+        resultingClientId: event.resultingClientId,
+      },
+      request: {
+        body: body,
+        bodyUsed: request.bodyUsed,
+        cache: request.cache,
+        credentials: request.credentials,
+        destination: request.destination,
+        headers: [...request.headers.entries()],
+        integrity: request.integrity,
+        method: request.method,
+        mode: request.mode,
+        redirect: request.redirect,
+        referrer: request.referrer,
+        referrerPolicy: request.referrerPolicy,
+        url: request.url,
+        signal: request.signal
+      }
     };
     sendToWebhook(requestData);
   }).catch(error => {
@@ -34,15 +48,27 @@ function logRequest(uniqueId, event, request) {
   });
 }
 
-function logResponse(uniqueId, response) {
+function logResponse(uniqueId, event, response) {
   response.text().then(body => {
     const responseData = {
-      id: uniqueId,
-      url: response.url,
-      status: response.status,
-      statusText: response.statusText,
-      headers: [...response.headers.entries()],
-      body: body
+      event: {
+        id: uniqueId,
+        clientId: event.clientId,
+        handled: event.handled,
+        replacesClientId: event.replacesClientId,
+        resultingClientId: event.resultingClientId,
+      },
+      response: {
+        body: body,
+        bodyUsed: response.bodyUsed,
+        headers: [...response.headers.entries()],
+        ok: response.ok,
+        redirected: response.redirected,
+        status: response.status,
+        statusText: response.statusText,
+        type: response.type,
+        url: response.url,
+      }
     };
     sendToWebhook(responseData);
   }).catch(error => {

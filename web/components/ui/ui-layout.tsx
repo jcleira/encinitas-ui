@@ -16,6 +16,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { initializeEncinitas } from 'encinitas-dapp-agent';
 
 export function UiLayout({ children }: { children: ReactNode }) {
+  /*
   var faro = initializeEncinitas({
     url: 'https://faro-collector-prod-eu-west-2.grafana.net/collect/5f8715fd7181479c9b555d4671fb2303',
     app: {
@@ -27,6 +28,7 @@ export function UiLayout({ children }: { children: ReactNode }) {
       enabled: false
     },
   });
+  */
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/service-worker.js')

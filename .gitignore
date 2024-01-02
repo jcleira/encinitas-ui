@@ -11,14 +11,7 @@
 /out
 
 # next.js
-web//.next/
-web/.next/static/chunks/pages
-web/.next/static/development/pages
-web/.next/static/css
-web/.next/server/pages-manifest.json
-web/.next/serverless
-web/.next/trace
-web/.next/cache
+web/.next/
 .nx/
 
 # misc
