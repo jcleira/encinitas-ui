@@ -1,5 +1,4 @@
 self.addEventListener('fetch', function(event) {
-  console.log('Handling fetch event for', event.request.url);
   const requestClone = event.request.clone();
 
   event.respondWith(
@@ -11,8 +10,9 @@ self.addEventListener('fetch', function(event) {
       // dApp may make.
       if (/\.solana\.com$/.test(requestUrl.hostname)) {
         const uniqueId = Date.now().toString(36) + Math.random().toString(36).substr(2);
-        const responseClone = response.clone();
         logRequest(uniqueId, event, requestClone);
+
+        const responseClone = response.clone();
         logResponse(uniqueId, event, responseClone);
       }
 
@@ -84,12 +84,38 @@ function logResponse(uniqueId, event, response) {
   });
 }
 
+/*
 function sendToWebhook(data) {
   fetch('https://webhook.site/683f3fba-dee1-4b0b-8e05-3c91dc2ee52e', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
     mode: 'no-cors'
+  })
+  .then(response => {
+    console.log('Status Code:', response.status);
+    console.log('Status Text:', response.statusJson);
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.text(); // or response.json() if the server responds with JSON
+  })
+  .then(textResponse => {
+    console.log('Webhook response:', textResponse);
+    // Here you can handle the text response from the webhook
+  })
+  .catch(error => {
+    console.error('Error sending data to webhook or handling response:', error);
+  });
+}
+*/
+
+function sendToWebhook(data) {
+  fetch('http://localhost:3001/capture', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
   }).catch(error => {
     console.error('Error sending data to webhook:', error);
   });
