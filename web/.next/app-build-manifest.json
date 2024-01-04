@@ -23,12 +23,6 @@
       "static/css/app/counter/page.css",
       "static/chunks/app/counter/page.js"
     ],
-    "/account/[address]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/account/[address]/page.css",
-      "static/chunks/app/account/[address]/page.js"
-    ],
     "/clusters/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

