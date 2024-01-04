@@ -85,7 +85,7 @@ function logResponse(uniqueId, event, response) {
 }
 
 function sendToWebhook(data) {
-  fetch('http://encinitas.com:3001/capture', {
+  fetch('http://localhost:3001/capture', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
