@@ -2,7 +2,7 @@ import React from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts/core';
 
-const ApdexChart: React.FC = () => {
+const ChartThroughput: React.FC = () => {
   function generateApdexData() {
     const data = [];
     const now = new Date();
@@ -11,14 +11,14 @@ const ApdexChart: React.FC = () => {
 
     let i = 0;
     for (let time = threeDaysAgo; time <= now; time = new Date(time.getTime() + 3600000)) {
-      let apdexScore = 1;
-      apdexScore -= Math.random() * (0.02 - 0.008) + 0.008;
+      let throughput = 20000;
+      throughput += Math.random() * (1000 - 500) + 500;
 
       if (i > 30) {
-        apdexScore -= Math.random() * (0.2 - 0.1) + 0.1;
+        throughput += Math.random() * (10000 - 5000) + 5000;
       }
 
-      data.push([time, apdexScore]);
+      data.push([time, throughput]);
       i++;
     }
 
@@ -28,7 +28,7 @@ const ApdexChart: React.FC = () => {
   const data = generateApdexData();
 
   const option = {
-    color: ['#0af29c'],
+    color: ['#c734f6'],
     grid: {
       top: '5%',
       left: '3%',
@@ -38,7 +38,7 @@ const ApdexChart: React.FC = () => {
     },
     legend: {
       show: true,
-      data: ['Apdex Score'],
+      data: ['Request per second'],
       textStyle: {
         color: '#fff'
       },
@@ -58,8 +58,7 @@ const ApdexChart: React.FC = () => {
     },
     yAxis: {
       type: 'value',
-      min: 0.78,
-      max: 1,
+      min: 15000,
       splitLine: {
         show: true,
         lineStyle: {
@@ -70,29 +69,22 @@ const ApdexChart: React.FC = () => {
     },
     series: [
       {
-        type: 'bar',
-        name: 'Apdex Score',
+        type: 'line',
         data: data,
-        markArea: {
-          silent: true,
-          data: [
-            [{
-              yAxis: 0.78,
-              itemStyle: {
-                color: 'rgba(177, 76, 237, 0.2)'
-              }
-            }, {
-              yAxis: 0.85
-            }],
-            [{
-              yAxis: 0.85,
-              itemStyle: {
-                color: 'rgba(9, 254, 238, 0.2)'
-              }
-            }, {
-              yAxis: 1
-            }]
-          ]
+        name: 'Request per second',
+        smooth: true,
+        areaStyle: {
+          opacity: 0.8,
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {
+              offset: 0,
+              color: 'rgb(199,52,246)'
+            },
+            {
+              offset: 1,
+              color: 'rgb(98,156,204)'
+            }
+          ])
         }
       }
     ],
@@ -105,4 +97,4 @@ const ApdexChart: React.FC = () => {
   );
 };
 
-export default ApdexChart;
+export default ChartThroughput;

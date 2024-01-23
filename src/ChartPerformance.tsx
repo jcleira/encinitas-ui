@@ -7,18 +7,27 @@ const ChartPerformance: React.FC = () => {
 function generateHourlyDataForLastThreeDays() {
   const data1 = [];
   const data2 = [];
+
   const now = new Date();
   const threeDaysAgoTimestamp = new Date().setDate(now.getDate() - 3);
   const threeDaysAgo = new Date(threeDaysAgoTimestamp);
 
-  for (let time = threeDaysAgo; time <= now; time = new Date(time.getTime() + 3600000)) { // 3600000ms = 1 hour
-    const loadTime1 = Math.random() * (1500 - 400) + 400; // Data for series 1
-    const percentage = 0.10 + Math.random() * 0.30; // Random percentage between 10% to 20%
-    const loadTime2 = loadTime1 * percentage; // Data for series 2 as a percentage of series 1
+  let i = 0;
+  for (let time = threeDaysAgo; time <= now; time = new Date(time.getTime() + 3600000)) {
+    let load1 = 400;
+    load1 += Math.random() * (100 - 50) + 5;
 
-    data1.push([time, loadTime1]);
-    data2.push([time, loadTime2]);
+    if (i > 30) {
+      load1 += Math.random() * (1000 - 50) + 50;
+      load1 += i;
+    }
+
+    data1.push([time, load1]);
+    data2.push([time, 50]);
+    i++;
   }
+
+  console.log(i);
 
   return [data1, data2];
 }
@@ -27,11 +36,21 @@ function generateHourlyDataForLastThreeDays() {
 
   const option = {
     color: ['#09feee'],
+    legend: {
+      show: true,
+      data: ['dApp', 'Program'],
+      textStyle: {
+        color: '#fff'
+      },
+      left: 'left',
+      bottom: 'bottom',
+      padding: [0, 30],
+    },
     grid: {
       top: '5%',
       left: '3%',
       right: '4%',
-      bottom: '3%',
+      bottom: '10%',
       containLabel: true
     },
     xAxis: {
@@ -63,7 +82,7 @@ function generateHourlyDataForLastThreeDays() {
     },
     series: [
     {
-      name: 'Series 1',
+      name: 'Program',
       type: 'bar',
       stack: 'total',
       data: data1,
@@ -72,7 +91,7 @@ function generateHourlyDataForLastThreeDays() {
       }
     },
     {
-      name: 'Series 2',
+      name: 'dApp',
       type: 'bar',
       stack: 'total',
       data: data2,

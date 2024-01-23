@@ -9,6 +9,7 @@ import CardHeader from '@mui/material/CardHeader';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
+import InfoIcon from '@mui/icons-material/Info';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
@@ -24,6 +25,9 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
 import ChartPerformance from './ChartPerformance';
 import ChartApdex from './ChartApdex';
+import ChartThroughput from './ChartThroughput';
+import ChartErrorRate from './ChartErrorRate';
+
 import theme from './theme';
 
 const drawerWidth: number = 240;
@@ -132,6 +136,18 @@ export default function App() {
             <IconButton onClick={toggleDrawer}>
               <ChevronLeftIcon />
             </IconButton>
+            <Typography
+              variant="h4"
+              noWrap
+              component="div"
+              sx={{
+                flexGrow: 1,
+                color: '#979797',
+                fontFamily: 'Oswald, sans-serif', fontWeight: 'bold'
+              }}
+            >
+              ENCINITAS
+            </Typography>
           </Toolbar>
           <Divider />
           <List component="nav">
@@ -156,18 +172,64 @@ export default function App() {
           <Container maxWidth={false} sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               <Grid item xs={12} md={6} lg={6}>
-                <Card sx={{ borderRadius: '16px', boxShadow: 3, maxWidth: '100%' }}>
-                  <CardHeader title="dApp Application Performance" />
-                  <CardContent sx={{ padding: '8px' }}>
+                <Card sx={{ borderRadius: '16px', boxShadow: 3, maxWidth: '100%', mb: 3 }}>
+                  <CardHeader
+                    title={
+                      <Typography variant="h6" component="div" sx={{ display: 'flex', alignItems: 'center' }}>
+                        dApp Application Performance
+                        <InfoIcon sx={{ fontSize: '1.0em', ml: 1 }} /> {}
+                      </Typography>
+                    }
+                  />
+                  <CardContent>
                     <ChartPerformance />
                   </CardContent>
                 </Card>
               </Grid>
               <Grid item xs={12} md={6} lg={6}>
-                <Card sx={{ borderRadius: '16px', boxShadow: 3, maxWidth: 600 }}>
-                  <CardHeader title="User Satisfaction - Apdex" />
+                <Card sx={{ borderRadius: '16px', boxShadow: 3, maxWidth: '100%'}}>
+                  <CardHeader
+                    title={
+                      <Typography variant="h6" component="div" sx={{ display: 'flex', alignItems: 'center' }}>
+                        User Satisfaction - Apdex Score
+                        <InfoIcon sx={{ fontSize: '1.0em', ml: 1 }} /> {}
+                      </Typography>
+                    }
+                  />
                   <CardContent>
                     <ChartApdex />
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+            <Grid container spacing={3}>
+              <Grid item xs={12} md={6} lg={6}>
+                <Card sx={{ borderRadius: '16px', boxShadow: 3, maxWidth: '100%', mb: 3}}>
+                <CardHeader
+                  title={
+                    <Typography variant="h6" component="div" sx={{ display: 'flex', alignItems: 'center' }}>
+                      Throughput
+                      <InfoIcon sx={{ fontSize: '1.0em', ml: 1 }} /> {}
+                    </Typography>
+                  }
+                />
+                  <CardContent>
+                    <ChartThroughput />
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item xs={12} md={6} lg={6}>
+                <Card sx={{ borderRadius: '16px', boxShadow: 3, maxWidth: '100%'}}>
+                  <CardHeader
+                    title={
+                      <Typography variant="h6" component="div" sx={{ display: 'flex', alignItems: 'center' }}>
+                        Error Rate
+                        <InfoIcon sx={{ fontSize: '1.0em', ml: 1 }} /> {}
+                      </Typography>
+                    }
+                  />
+                  <CardContent>
+                    <ChartErrorRate />
                   </CardContent>
                 </Card>
               </Grid>
