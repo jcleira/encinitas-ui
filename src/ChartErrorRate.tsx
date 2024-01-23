@@ -2,7 +2,7 @@ import React from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts/core';
 
-const ApdexChart: React.FC = () => {
+const ChartErrorRate: React.FC = () => {
   function generateApdexData() {
     const data = [];
     const now = new Date();
@@ -11,14 +11,14 @@ const ApdexChart: React.FC = () => {
 
     let i = 0;
     for (let time = threeDaysAgo; time <= now; time = new Date(time.getTime() + 3600000)) {
-      let apdexScore = 1;
-      apdexScore -= Math.random() * (0.02 - 0.008) + 0.008;
+      let errorRate = 0.01;
+      errorRate += Math.random() * (0.02 - 0.008) + 0.008;
 
       if (i > 30) {
-        apdexScore -= Math.random() * (0.2 - 0.1) + 0.1;
+        errorRate += Math.random() * (0.2 - 0.1) + 0.1;
       }
 
-      data.push([time, apdexScore]);
+      data.push([time, errorRate]);
       i++;
     }
 
@@ -28,7 +28,7 @@ const ApdexChart: React.FC = () => {
   const data = generateApdexData();
 
   const option = {
-    color: ['#0af29c'],
+    color: ['#c734f6'],
     grid: {
       top: '5%',
       left: '3%',
@@ -38,7 +38,7 @@ const ApdexChart: React.FC = () => {
     },
     legend: {
       show: true,
-      data: ['Apdex Score'],
+      data: ['Error Rate %'],
       textStyle: {
         color: '#fff'
       },
@@ -58,8 +58,6 @@ const ApdexChart: React.FC = () => {
     },
     yAxis: {
       type: 'value',
-      min: 0.78,
-      max: 1,
       splitLine: {
         show: true,
         lineStyle: {
@@ -70,30 +68,10 @@ const ApdexChart: React.FC = () => {
     },
     series: [
       {
-        type: 'bar',
-        name: 'Apdex Score',
+        type: 'line',
+        name: 'Error Rate %',
         data: data,
-        markArea: {
-          silent: true,
-          data: [
-            [{
-              yAxis: 0.78,
-              itemStyle: {
-                color: 'rgba(177, 76, 237, 0.2)'
-              }
-            }, {
-              yAxis: 0.85
-            }],
-            [{
-              yAxis: 0.85,
-              itemStyle: {
-                color: 'rgba(9, 254, 238, 0.2)'
-              }
-            }, {
-              yAxis: 1
-            }]
-          ]
-        }
+        smooth: true,
       }
     ],
   };
@@ -105,4 +83,4 @@ const ApdexChart: React.FC = () => {
   );
 };
 
-export default ApdexChart;
+export default ChartErrorRate;
