@@ -87,7 +87,7 @@ function generateHourlyDataForLastThreeDays() {
       stack: 'total',
       data: data1,
       itemStyle: {
-        color: '#09feee' // Color for series 1
+        color: '#08ffee'
       }
     },
     {
@@ -96,7 +96,7 @@ function generateHourlyDataForLastThreeDays() {
       stack: 'total',
       data: data2,
       itemStyle: {
-        color: '#c262ed' // Color for series 2
+        color: '#06f39c'
       }
     }
   ]
