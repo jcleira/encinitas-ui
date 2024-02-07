@@ -18,7 +18,7 @@ import ChartErrorRate from '../../components/ChartErrorRate';
 
 export default function Dashboard() {
   return (
-    <Container maxWidth={false} sx={{ mt: 4, mb: 4 }}>
+    <Container maxWidth={false} sx={{ mt: 6, mb: 4 }}>
       <Grid container spacing={3}>
         <Grid item xs={12} md={6} lg={6}>
           <Card sx={{ borderRadius: '16px', boxShadow: 3, maxWidth: '100%', mb: 3 }}>
