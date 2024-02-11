@@ -1,31 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts/core';
 
+// ChartDataType is a type for the data that will be used in the chart. It will
+// be parsed from the data fetched from the API.
+type ChartDataType = {
+  throughput: [string, number][];
+};
+
 const ChartThroughput: React.FC = () => {
-  function generateApdexData() {
-    const data = [];
-    const now = new Date();
-    const threeDaysAgoTimestamp = new Date().setDate(now.getDate() - 3);
-    const threeDaysAgo = new Date(threeDaysAgoTimestamp);
-
-    let i = 0;
-    for (let time = threeDaysAgo; time <= now; time = new Date(time.getTime() + 3600000)) {
-      let throughput = 20000;
-      throughput += Math.random() * (1000 - 500) + 500;
-
-      if (i > 30) {
-        throughput += Math.random() * (10000 - 5000) + 5000;
-      }
-
-      data.push([time, throughput]);
-      i++;
-    }
-
-    return data;
-  }
-
-  const data = generateApdexData();
+  const [chartData, setChartData] = useState<ChartDataType>({ throughput: [] });
+  useEffect(() => {
+    fetch('http://localhost:3001/metrics/query')
+      .then(response => response.json())
+      .then((data: ChartDataType) => {
+        setChartData(data);
+      })
+      .catch(error => console.error("Failed to fetch data", error));
+  }, []);
 
   const option = {
     color: ['#c734f6'],
@@ -58,7 +50,7 @@ const ChartThroughput: React.FC = () => {
     },
     yAxis: {
       type: 'value',
-      min: 15000,
+      min: 0,
       splitLine: {
         show: true,
         lineStyle: {
@@ -70,7 +62,7 @@ const ChartThroughput: React.FC = () => {
     series: [
       {
         type: 'line',
-        data: data,
+        data: chartData.throughput,
         name: 'Request per second',
         smooth: true,
         areaStyle: {
