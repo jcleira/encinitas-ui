@@ -1,31 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts/core';
 
+// ChartDataType is a type for the data that will be used in the chart. It will
+// be parsed from the data fetched from the API.
+type ChartDataType = {
+  apdex: [string, number][];
+};
+
 const ApdexChart: React.FC = () => {
-  function generateApdexData() {
-    const data = [];
-    const now = new Date();
-    const threeDaysAgoTimestamp = new Date().setDate(now.getDate() - 3);
-    const threeDaysAgo = new Date(threeDaysAgoTimestamp);
-
-    let i = 0;
-    for (let time = threeDaysAgo; time <= now; time = new Date(time.getTime() + 3600000)) {
-      let apdexScore = 1;
-      apdexScore -= Math.random() * (0.02 - 0.008) + 0.008;
-
-      if (i > 30) {
-        apdexScore -= Math.random() * (0.2 - 0.1) + 0.1;
-      }
-
-      data.push([time, apdexScore]);
-      i++;
-    }
-
-    return data;
-  }
-
-  const data = generateApdexData();
+  const [chartData, setChartData] = useState<ChartDataType>({ apdex: [] });
+  useEffect(() => {
+    fetch('http://localhost:3001/metrics/query')
+      .then(response => response.json())
+      .then((data: ChartDataType) => {
+        setChartData(data);
+      })
+      .catch(error => console.error("Failed to fetch data", error));
+  }, []);
 
   const option = {
     color: ['#0af29c'],
@@ -58,7 +50,7 @@ const ApdexChart: React.FC = () => {
     },
     yAxis: {
       type: 'value',
-      min: 0.78,
+      min: 0,
       max: 1,
       splitLine: {
         show: true,
@@ -72,7 +64,7 @@ const ApdexChart: React.FC = () => {
       {
         type: 'bar',
         name: 'Apdex Score',
-        data: data,
+        data: chartData.apdex,
         markArea: {
           silent: true,
           data: [

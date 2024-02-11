@@ -1,44 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts/core';
 import { EChartsOption } from 'echarts';
 
-const ChartPerformance: React.FC = () => {
-function generateHourlyDataForLastThreeDays() {
-  const data1 = [];
-  const data2 = [];
-
-  const now = new Date();
-  const threeDaysAgoTimestamp = new Date().setDate(now.getDate() - 3);
-  const threeDaysAgo = new Date(threeDaysAgoTimestamp);
-
-  let i = 0;
-  for (let time = threeDaysAgo; time <= now; time = new Date(time.getTime() + 3600000)) {
-    let load1 = 400;
-    load1 += Math.random() * (100 - 50) + 5;
-
-    if (i > 30) {
-      load1 += Math.random() * (1000 - 50) + 50;
-      load1 += i;
-    }
-
-    data1.push([time, load1]);
-    data2.push([time, 50]);
-    i++;
+// ChartDataType is a type for the data that will be used in the chart. It will
+// be parsed from the data fetched from the API.
+type ChartDataType = {
+  performance: {
+    rpc: [string, number][];
+    solana: [string, number][];
   }
+};
 
-  console.log(i);
+const ChartPerformance: React.FC = () => {
+  const [chartData, setChartData] = useState<ChartDataType>({ performance: { rpc: [], solana: [] } });
 
-  return [data1, data2];
-}
-
-  const [data1, data2] = generateHourlyDataForLastThreeDays();
+  useEffect(() => {
+    fetch('http://localhost:3001/metrics/query')
+      .then(response => response.json())
+      .then((data: ChartDataType) => {
+        setChartData(data);
+      })
+      .catch(error => console.error("Failed to fetch data", error));
+  }, []);
 
   const option = {
     color: ['#09feee'],
     legend: {
       show: true,
-      data: ['dApp', 'Program'],
+      data: ['Solana Program', 'RPC'],
       textStyle: {
         color: '#fff'
       },
@@ -64,9 +54,9 @@ function generateHourlyDataForLastThreeDays() {
       },
       axisLabel: {
         formatter: function (value: number) {
-          return new Date(value).toLocaleTimeString();
+          return new Date(value).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         }
-      },
+      }
     },
     yAxis: {
       splitLine: {
@@ -82,19 +72,19 @@ function generateHourlyDataForLastThreeDays() {
     },
     series: [
     {
-      name: 'Program',
+      name: 'Solana Program',
       type: 'bar',
       stack: 'total',
-      data: data1,
+      data: chartData.performance.solana,
       itemStyle: {
         color: '#08ffee'
       }
     },
     {
-      name: 'dApp',
+      name: 'RPC',
       type: 'bar',
       stack: 'total',
-      data: data2,
+      data: chartData.performance.rpc,
       itemStyle: {
         color: '#06f39c'
       }
