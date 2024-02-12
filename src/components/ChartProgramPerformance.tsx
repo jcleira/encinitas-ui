@@ -6,7 +6,6 @@ import { EChartsOption } from 'echarts';
 // ChartDataType is a type for the data that will be used in the chart. It will
 // be parsed from the data fetched from the API.
 type PerformanceData = {
-  rpc: [string, number][];
   solana: [string, number][];
 };
 
@@ -15,7 +14,7 @@ type ChartDataType = {
 };
 
 const ChartProgramPerformance: React.FC<{ programId: string | null }> = ({ programId }) => {
-  const [chartData, setChartData] = useState<ChartDataType>({ performance: { rpc: [], solana: [] } });
+  const [chartData, setChartData] = useState<ChartDataType>({ performance: { solana: [] } });
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -48,7 +47,7 @@ const ChartProgramPerformance: React.FC<{ programId: string | null }> = ({ progr
     },
     legend: {
       show: true,
-      data: ['RPC', 'Solana Program'],
+      data: ['Solana'],
       textStyle: {
         color: '#fff'
       },
@@ -94,19 +93,6 @@ const ChartProgramPerformance: React.FC<{ programId: string | null }> = ({ progr
       },
       areaStyle: {
         color: '#c734f6'
-      }
-    },
-    {
-      name: 'RPC',
-      type: 'line',
-      stack: 'total',
-      symbolSize: 0,
-      data: chartData.performance.rpc,
-      itemStyle: {
-        color: '#06f39c'
-      },
-      areaStyle: {
-        color: '#08ffee'
       }
     }
   ]

@@ -8,6 +8,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
+import CircularProgress from '@mui/material/CircularProgress';
 
 import InfoIcon from '@mui/icons-material/Info';
 
@@ -28,20 +29,35 @@ type ChartDataType = {
   errors: [string, number][],
 };
 
-export default function Dashboard() {
- const [chartData, setChartData] = useState<ChartDataType | null>(null);
+interface DashboardProps {
+  adjustDrawerVisibility: (isVisible: boolean) => void;
+}
+
+export default function Dashboard({ adjustDrawerVisibility }: DashboardProps) {
+  const [chartData, setChartData] = useState<ChartDataType | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  React.useEffect(() => {
+    adjustDrawerVisibility(true);
+    return () => adjustDrawerVisibility(true);
+  }, [adjustDrawerVisibility]);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch('http://localhost:3001/metrics/query')
       .then(response => response.json())
       .then(data => {
         setChartData(data);
+        setIsLoading(false);
       })
-      .catch(error => console.error("Failed to fetch data", error));
+      .catch(error => {
+        console.error("Failed to fetch data", error);
+        setIsLoading(false);
+      });
   }, []);
 
   return (
-    <Container maxWidth={false} sx={{ mt: 6, mb: 4 }}>
+    <Container maxWidth={false} sx={{ mt: 10 }}>
       <Grid container spacing={3}>
         <Grid item xs={12} md={6} lg={6}>
           <Card sx={{ borderRadius: '16px', boxShadow: 3, maxWidth: '100%', mb: 3 }}>
@@ -53,8 +69,19 @@ export default function Dashboard() {
                 </Typography>
               }
             />
-            <CardContent>
-              {chartData && <ChartPerformance chartData={chartData} />}
+            <CardContent sx={{
+              minHeight: '300px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              {isLoading ? (
+                <Box display="flex" justifyContent="center" alignItems="center">
+                  <CircularProgress /> {}
+                </Box>
+              ) : (
+                chartData && <ChartPerformance chartData={chartData} />
+              )}
             </CardContent>
           </Card>
         </Grid>
@@ -68,8 +95,19 @@ export default function Dashboard() {
                 </Typography>
               }
             />
-            <CardContent>
-              {chartData && <ChartApdex chartData={chartData} />}
+            <CardContent sx={{
+              minHeight: '300px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              {isLoading ? (
+                <Box display="flex" justifyContent="center" alignItems="center">
+                  <CircularProgress /> {}
+                </Box>
+              ) : (
+                chartData && <ChartApdex chartData={chartData} />
+              )}
             </CardContent>
           </Card>
         </Grid>
@@ -85,8 +123,19 @@ export default function Dashboard() {
               </Typography>
             }
           />
-            <CardContent>
-              {chartData && <ChartThroughput chartData={chartData} />}
+            <CardContent sx={{
+              minHeight: '300px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              {isLoading ? (
+                <Box display="flex" justifyContent="center" alignItems="center">
+                  <CircularProgress /> {}
+                </Box>
+              ) : (
+                chartData && <ChartThroughput chartData={chartData} />
+              )}
             </CardContent>
           </Card>
         </Grid>
@@ -100,8 +149,19 @@ export default function Dashboard() {
                 </Typography>
               }
             />
-            <CardContent>
-              {chartData && <ChartErrorRate chartData={chartData} />}
+            <CardContent sx={{
+              minHeight: '300px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              {isLoading ? (
+                <Box display="flex" justifyContent="center" alignItems="center">
+                  <CircularProgress /> {}
+                </Box>
+              ) : (
+                chartData && <ChartErrorRate chartData={chartData} />
+              )}
             </CardContent>
           </Card>
         </Grid>
