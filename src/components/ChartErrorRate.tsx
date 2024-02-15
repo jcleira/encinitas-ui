@@ -1,31 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts/core';
 
+// ChartDataType is a type for the data that will be used in the chart. It will
+// be parsed from the data fetched from the API.
+type ChartDataType = {
+  errors: [string, number][];
+};
+
 const ChartErrorRate: React.FC = () => {
-  function generateApdexData() {
-    const data = [];
-    const now = new Date();
-    const threeDaysAgoTimestamp = new Date().setDate(now.getDate() - 3);
-    const threeDaysAgo = new Date(threeDaysAgoTimestamp);
+  const [chartData, setChartData] = useState<ChartDataType>({ errors: [] });
 
-    let i = 0;
-    for (let time = threeDaysAgo; time <= now; time = new Date(time.getTime() + 3600000)) {
-      let errorRate = 0.01;
-      errorRate += Math.random() * (0.02 - 0.008) + 0.008;
-
-      if (i > 30) {
-        errorRate += Math.random() * (0.2 - 0.1) + 0.1;
-      }
-
-      data.push([time, errorRate]);
-      i++;
-    }
-
-    return data;
-  }
-
-  const data = generateApdexData();
+  useEffect(() => {
+    fetch('http://localhost:3001/metrics/query')
+      .then(response => response.json())
+      .then((data: ChartDataType) => {
+        setChartData(data);
+      })
+      .catch(error => console.error("Failed to fetch data", error));
+  }, []);
 
   const option = {
     color: ['#c734f6'],
@@ -70,7 +63,7 @@ const ChartErrorRate: React.FC = () => {
       {
         type: 'line',
         name: 'Error Rate %',
-        data: data,
+        data: chartData.errors,
         smooth: true,
       }
     ],
