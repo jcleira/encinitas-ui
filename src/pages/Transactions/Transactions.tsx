@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Card,
@@ -19,19 +19,6 @@ import ChartThroughput from '../../components/ChartThroughput';
 import TransactionsTable from '../../components/TransactionsTable';
 
 const Transactions = () => {
-  const transactionData = [
-    { name: 'Index/getProgramAccount', percentage: 26.68 },
-    { name: 'Phone/Register/sendTransaction', percentage: 21.19 },
-    { name: 'Phone/Settings/sendTransaction', percentage: 21.19 },
-    { name: 'Phone/MobileData/sendTransaction', percentage: 21.19 },
-    { name: 'Phone/Notifications/sendTransaction', percentage: 21.19 },
-    { name: 'Phone/Bluetooth/sendTransaction', percentage: 21.19 },
-    { name: 'Phone/Hotspot/sendTransaction', percentage: 21.19 },
-    { name: 'Phone/Sound/sendTransaction', percentage: 21.19 },
-    { name: 'Phone/General/sendTransaction', percentage: 21.19 },
-    { name: 'Phone/Control/sendTransaction', percentage: 21.19 },
-  ];
-
   const transactionsChartData = {
     names: [
       'Index/getProgramAccount',
