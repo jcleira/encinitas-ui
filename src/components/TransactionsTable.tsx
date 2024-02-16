@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow,
   Paper,
@@ -8,26 +8,17 @@ import {
   styled
 } from '@mui/material';
 
+interface ApiResponse {
+  transactions: Array<{
+    program_address: string;
+    percentage: number;
+  }>;
+}
+
 interface TransactionData {
   name: string;
   percentage: number;
 }
-
-const createData = (name: string, percentage: number): TransactionData => {
-  return { name, percentage };
-};
-const rows = [
-  createData('Index/getProgramAccount', 14.74 ),
-  createData('Phone/MobileData/ndTransaction', 14.78 ),
-  createData('Phone/Bluetooth/sendTransaction', 11.19 ),
-  createData('Phone/Register/sendTranstion', 10.43 ),
-  createData('Phone/Settings/sendTransaion', 8.12 ),
-  createData('Phone/Notications/sendTransaction', 7.65 ),
-  createData('Phone/Hotspot/sendTransaction', 6.34 ),
-  createData('Phone/Sound/sendTransaction', 6.21 ),
-  createData('Phone/General/sendTransaction', 3.19 ),
-  createData('Phone/Control/sendTransaction', 1.77 ),
-];
 
 const ColorLinearProgress = styled(LinearProgress)(({ value }: { value: number }) => ({
   '& .MuiLinearProgress-bar': {
@@ -36,12 +27,34 @@ const ColorLinearProgress = styled(LinearProgress)(({ value }: { value: number }
 }));
 
 const TransactionsTable = () => {
+  const [rows, setRows] = useState<TransactionData[]>([]);
+
+  useEffect(() => {
+    fetch('http://localhost:3001/transactions/query')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data: ApiResponse) => {
+        const transactionsData = data.transactions.map(transaction => ({
+          name: transaction.program_address,
+          percentage: parseFloat(transaction.percentage.toFixed(2)),
+        }));
+        setRows(transactionsData);
+      })
+      .catch(error => {
+        console.error('There was a problem with your fetch operation:', error);
+      });
+  }, []);
+
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Transaction Type</TableCell>
+            <TableCell>Program</TableCell>
             <TableCell align="right">Percentage</TableCell>
           </TableRow>
         </TableHead>
