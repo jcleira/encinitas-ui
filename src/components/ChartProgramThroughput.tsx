@@ -1,14 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts/core';
 
-interface ChartApdexProps {
-  chartData: {
-    throughput: [string, number][];
-  }
-}
+// ChartDataType is a type for the data that will be used in the chart. It will
+// be parsed from the data fetched from the API.
+type ChartDataType = {
+  throughput: [string, number][];
+};
 
-const ChartThroughput: React.FC<ChartApdexProps> = ({ chartData }) => {
+const ChartProgramThroughput: React.FC<{ programId: string | null }> = ({ programId }) => {
+  const [chartData, setChartData] = useState<ChartDataType>({ throughput: [] });
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if (!programId) return;
+
+    setIsLoading(true);
+    fetch(`http://localhost:3001/metrics/programs/query?program_id=${programId}`)
+      .then(response => response.json())
+        .then((data: ChartDataType) => {
+          setChartData(data);
+          setIsLoading(false);
+        })
+        .catch(error => {
+          console.error("Failed to fetch data", error);
+          setIsLoading(false);
+        });
+  }, [programId]);
+
+  if (isLoading) {
+    return <div>Loading chart data...</div>;
+  }
+
+  if (!chartData || !chartData.throughput) {
+    return <div>No data available</div>;
+  }
+
   const option = {
     color: ['#c734f6'],
     grid: {
@@ -79,4 +106,4 @@ const ChartThroughput: React.FC<ChartApdexProps> = ({ chartData }) => {
   );
 };
 
-export default ChartThroughput;
+export default ChartProgramThroughput;

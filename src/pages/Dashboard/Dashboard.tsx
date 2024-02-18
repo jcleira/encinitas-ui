@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -16,7 +16,30 @@ import ChartApdex from '../../components/ChartApdex';
 import ChartThroughput from '../../components/ChartThroughput';
 import ChartErrorRate from '../../components/ChartErrorRate';
 
+// ChartDataType is a type for the data that will be used in the chart. It will
+// be parsed from the data fetched from the API.
+type ChartDataType = {
+  performance: {
+    rpc: [string, number][];
+    solana: [string, number][];
+  },
+  apdex: [string, number][],
+  throughput: [string, number][],
+  errors: [string, number][],
+};
+
 export default function Dashboard() {
+ const [chartData, setChartData] = useState<ChartDataType | null>(null);
+
+  useEffect(() => {
+    fetch('http://localhost:3001/metrics/query')
+      .then(response => response.json())
+      .then(data => {
+        setChartData(data);
+      })
+      .catch(error => console.error("Failed to fetch data", error));
+  }, []);
+
   return (
     <Container maxWidth={false} sx={{ mt: 6, mb: 4 }}>
       <Grid container spacing={3}>
@@ -31,7 +54,7 @@ export default function Dashboard() {
               }
             />
             <CardContent>
-              <ChartPerformance />
+              {chartData && <ChartPerformance chartData={chartData} />}
             </CardContent>
           </Card>
         </Grid>
@@ -46,7 +69,7 @@ export default function Dashboard() {
               }
             />
             <CardContent>
-              <ChartApdex />
+              {chartData && <ChartApdex chartData={chartData} />}
             </CardContent>
           </Card>
         </Grid>
@@ -63,7 +86,7 @@ export default function Dashboard() {
             }
           />
             <CardContent>
-              <ChartThroughput />
+              {chartData && <ChartThroughput chartData={chartData} />}
             </CardContent>
           </Card>
         </Grid>
@@ -78,7 +101,7 @@ export default function Dashboard() {
               }
             />
             <CardContent>
-              <ChartErrorRate />
+              {chartData && <ChartErrorRate chartData={chartData} />}
             </CardContent>
           </Card>
         </Grid>
