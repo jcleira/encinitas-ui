@@ -2,24 +2,13 @@ import React, { useState, useEffect } from 'react';
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts/core';
 
-// ChartDataType is a type for the data that will be used in the chart. It will
-// be parsed from the data fetched from the API.
-type ChartDataType = {
-  errors: [string, number][];
-};
+interface ChartErrorProps {
+  chartData: {
+    errors: [string, number][];
+  }
+}
 
-const ChartErrorRate: React.FC = () => {
-  const [chartData, setChartData] = useState<ChartDataType>({ errors: [] });
-
-  useEffect(() => {
-    fetch('http://localhost:3001/metrics/query')
-      .then(response => response.json())
-      .then((data: ChartDataType) => {
-        setChartData(data);
-      })
-      .catch(error => console.error("Failed to fetch data", error));
-  }, []);
-
+const ChartErrorRate: React.FC<ChartErrorProps> = ({ chartData }) => {
   const option = {
     color: ['#c734f6'],
     grid: {

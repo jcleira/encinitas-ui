@@ -8,16 +8,13 @@ import {
   styled
 } from '@mui/material';
 
-interface ApiResponse {
+interface TransactionsTableProps {
   transactions: Array<{
-    program_address: string;
+    name: string;
     percentage: number;
   }>;
-}
-
-interface TransactionData {
-  name: string;
-  percentage: number;
+  onSelectProgram: (programId: string) => void;
+  selectedProgramId: string | null;
 }
 
 const ColorLinearProgress = styled(LinearProgress)(({ value }: { value: number }) => ({
@@ -26,29 +23,9 @@ const ColorLinearProgress = styled(LinearProgress)(({ value }: { value: number }
   },
 }));
 
-const TransactionsTable = () => {
-  const [rows, setRows] = useState<TransactionData[]>([]);
-
-  useEffect(() => {
-    fetch('http://localhost:3001/transactions/query')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then((data: ApiResponse) => {
-        const transactionsData = data.transactions.map(transaction => ({
-          name: transaction.program_address,
-          percentage: parseFloat(transaction.percentage.toFixed(2)),
-        }));
-        setRows(transactionsData);
-      })
-      .catch(error => {
-        console.error('There was a problem with your fetch operation:', error);
-      });
-  }, []);
-
+const TransactionsTable: React.FC<TransactionsTableProps> = (
+{ transactions, onSelectProgram, selectedProgramId }
+) => {
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
@@ -59,8 +36,15 @@ const TransactionsTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
+          {transactions.map((row) => (
+            <TableRow
+              key={row.name}
+              onClick={() => onSelectProgram(row.name)}
+              style={{
+                cursor: 'pointer',
+                backgroundColor: row.name === selectedProgramId ? '#121212' : 'transparent',
+              }}
+            >
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
