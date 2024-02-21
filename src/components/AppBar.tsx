@@ -66,11 +66,6 @@ export default function AppBar({ open, toggleDrawer }: AppBarProps) {
         >
         dApp Performance Manager
         </Typography>
-        <IconButton color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
       </Toolbar>
     </AppBarComponent>
   );

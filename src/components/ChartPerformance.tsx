@@ -5,7 +5,6 @@ import * as echarts from 'echarts/core';
 interface ChartPerformanceProps {
   chartData: {
     performance: {
-      rpc: [string, number][];
       solana: [string, number][];
     }
   }
@@ -23,7 +22,7 @@ const ChartPerformance: React.FC<ChartPerformanceProps> = ({ chartData }) => {
     },
     legend: {
       show: true,
-      data: ['Solana Program', 'RPC'],
+      data: ['Solana'],
       textStyle: {
         color: '#fff'
       },
@@ -63,15 +62,6 @@ const ChartPerformance: React.FC<ChartPerformanceProps> = ({ chartData }) => {
       data: chartData.performance.solana,
       itemStyle: {
         color: '#08ffee'
-      }
-    },
-    {
-      name: 'RPC',
-      type: 'bar',
-      stack: 'total',
-      data: chartData.performance.rpc,
-      itemStyle: {
-        color: '#06f39c'
       }
     }
   ]

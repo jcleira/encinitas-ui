@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { styled } from '@mui/material/styles';
 
@@ -11,7 +12,7 @@ import Typography from '@mui/material/Typography';
 
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
-import { mainListItems, secondaryListItems } from './drawerItems';
+import { MainListItems } from './drawerItems';
 
 // TODO: Move to theme
 const drawerWidth: number = 240;
@@ -51,6 +52,8 @@ const DrawerComponent = styled(MuiDrawer, {
 export default function Drawer(
   { open, toggleDrawer }: DrawerProps
 ) {
+  const navigate = useNavigate();
+
 return (
   <DrawerComponent variant="permanent" open={open}>
     <Toolbar
@@ -71,17 +74,17 @@ return (
         sx={{
           flexGrow: 1,
           color: '#979797',
-          fontFamily: 'Oswald, sans-serif', fontWeight: 'bold'
+          fontFamily: 'Oswald, sans-serif', fontWeight: 'bold',
+          cursor: "pointer"
         }}
+        onClick={() => navigate('/')}
       >
         ENCINITAS
       </Typography>
     </Toolbar>
     <Divider />
     <List component="nav">
-      {mainListItems}
-      <Divider sx={{ my: 1 }} />
-      {secondaryListItems}
+      <MainListItems />
     </List>
   </DrawerComponent>
 );
