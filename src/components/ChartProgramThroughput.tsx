@@ -16,7 +16,7 @@ const ChartProgramThroughput: React.FC<{ programId: string | null }> = ({ progra
     if (!programId) return;
 
     setIsLoading(true);
-    fetch(`http://localhost:3001/metrics/programs/query?program_id=${programId}`)
+    fetch(`https://api.encinitas.xyz/metrics/programs/query?program_id=${programId}`)
       .then(response => response.json())
         .then((data: ChartDataType) => {
           setChartData(data);
@@ -78,7 +78,7 @@ const ChartProgramThroughput: React.FC<{ programId: string | null }> = ({ progra
     },
     series: [
       {
-        type: 'line',
+        type: 'bar',
         data: chartData.throughput,
         name: 'Request per second',
         smooth: true,

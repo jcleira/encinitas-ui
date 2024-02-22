@@ -51,7 +51,7 @@ const ChartThroughput: React.FC<ChartApdexProps> = ({ chartData }) => {
     },
     series: [
       {
-        type: 'line',
+        type: 'bar',
         data: chartData.throughput,
         name: 'Request per second',
         smooth: true,

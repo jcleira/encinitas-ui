@@ -21,7 +21,7 @@ const ChartProgramPerformance: React.FC<{ programId: string | null }> = ({ progr
     if (!programId) return;
 
     setIsLoading(true);
-    fetch(`http://localhost:3001/metrics/programs/query?program_id=${programId}`)
+    fetch(`https://api.encinitas.xyz/metrics/programs/query?program_id=${programId}`)
       .then(response => response.json())
         .then((data: ChartDataType) => {
           setChartData(data);

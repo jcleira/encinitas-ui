@@ -9,8 +9,8 @@ import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import CircularProgress from '@mui/material/CircularProgress';
-
 import InfoIcon from '@mui/icons-material/Info';
+import Tooltip from '@mui/material/Tooltip';
 
 import ChartPerformance from '../../components/ChartPerformance';
 import ChartApdex from '../../components/ChartApdex';
@@ -44,7 +44,7 @@ export default function Dashboard({ adjustDrawerVisibility }: DashboardProps) {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch('http://localhost:3001/metrics/query')
+    fetch('https://api.encinitas.xyz/metrics/query')
       .then(response => response.json())
       .then(data => {
         setChartData(data);
@@ -65,7 +65,14 @@ export default function Dashboard({ adjustDrawerVisibility }: DashboardProps) {
               title={
                 <Typography variant="h6" component="div" sx={{ display: 'flex', alignItems: 'center' }}>
                   dApp Application Performance
-                  <InfoIcon sx={{ fontSize: '1.0em', ml: 1 }} /> {}
+                  <Tooltip
+                    title={
+                      <Typography sx={{ fontSize: '1.0rem' }}>Program transactions execution time in milliseconds.
+                      </Typography>
+                    }
+                    >
+                    <InfoIcon sx={{ fontSize: '1.0em', ml: 1 }} />
+                  </Tooltip>
                 </Typography>
               }
             />
@@ -91,7 +98,14 @@ export default function Dashboard({ adjustDrawerVisibility }: DashboardProps) {
               title={
                 <Typography variant="h6" component="div" sx={{ display: 'flex', alignItems: 'center' }}>
                   User Satisfaction - Apdex Score
-                  <InfoIcon sx={{ fontSize: '1.0em', ml: 1 }} /> {}
+                  <Tooltip
+                    title={
+                      <Typography sx={{ fontSize: '1.0rem' }}>Apdex score (User Satisfaction) from a 0 to 1 scale, 1 meaning full satisfaction, and 0 full frustration; More info <a target="_blank" href="https://en.wikipedia.org/wiki/Apdex">here</a>.
+                      </Typography>
+                    }
+                    >
+                    <InfoIcon sx={{ fontSize: '1.0em', ml: 1 }} />
+                  </Tooltip>
                 </Typography>
               }
             />
@@ -119,7 +133,14 @@ export default function Dashboard({ adjustDrawerVisibility }: DashboardProps) {
             title={
               <Typography variant="h6" component="div" sx={{ display: 'flex', alignItems: 'center' }}>
                 Throughput
-                <InfoIcon sx={{ fontSize: '1.0em', ml: 1 }} /> {}
+                  <Tooltip
+                    title={
+                      <Typography sx={{ fontSize: '1.0rem' }}>Program transaction execution count during the aggregated period.
+                      </Typography>
+                    }
+                  >
+                    <InfoIcon sx={{ fontSize: '1.0em', ml: 1 }} />
+                  </Tooltip>
               </Typography>
             }
           />
@@ -143,9 +164,18 @@ export default function Dashboard({ adjustDrawerVisibility }: DashboardProps) {
           <Card sx={{ borderRadius: '16px', boxShadow: 3, maxWidth: '100%'}}>
             <CardHeader
               title={
-                <Typography variant="h6" component="div" sx={{ display: 'flex', alignItems: 'center' }}>
+                <Typography variant="h6" component="div"
+                  sx={{ display: 'flex', alignItems: 'center' }}
+                >
                   Error Rate
-                  <InfoIcon sx={{ fontSize: '1.0em', ml: 1 }} /> {}
+                  <Tooltip
+                    title={
+                      <Typography sx={{ fontSize: '1.0rem' }}>Error rate percentage of the Program transactions during the aggregated period.
+                      </Typography>
+                    }
+                  >
+                    <InfoIcon sx={{ fontSize: '1.0em', ml: 1 }} />
+                  </Tooltip>
                 </Typography>
               }
             />

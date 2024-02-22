@@ -53,7 +53,7 @@ export const MainListItems = () => {
           sx={{ color: isSelected('/transactions') ? '#09feee' : '#979797' }}
         />
       </ListItemButton>
-      <ListItemButton>
+      <ListItemButton disabled>
         <ListItemIcon
         sx={{ color: '#979797' }}
         >
@@ -61,7 +61,7 @@ export const MainListItems = () => {
         </ListItemIcon>
         <ListItemText primary="Errors" />
       </ListItemButton>
-      <ListItemButton>
+      <ListItemButton disabled>
         <ListItemIcon
         sx={{ color: '#979797' }}
         >
@@ -69,7 +69,7 @@ export const MainListItems = () => {
         </ListItemIcon>
         <ListItemText primary="Alerts" />
       </ListItemButton>
-      <ListItemButton>
+      <ListItemButton disabled>
         <ListItemIcon
         sx={{ color: '#979797' }}
         >
