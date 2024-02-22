@@ -52,7 +52,7 @@ function Home({ adjustDrawerVisibility }: HomeProps) {
 
   const fetchPrograms = async () => {
     try {
-      const response = await fetch('http://localhost:3001/manager/programs');
+      const response = await fetch('https://api.encinitas.xyz/manager/programs');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -70,7 +70,7 @@ function Home({ adjustDrawerVisibility }: HomeProps) {
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3001/manager/programs', {
+      const response = await fetch('https://api.encinitas.xyz/manager/programs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -129,9 +129,26 @@ function Home({ adjustDrawerVisibility }: HomeProps) {
             </Typography>
             <br/>
             <Typography
-              variant="h6"
               component="h2"
-              sx={{ mb: 1, color: 'white' }}>Encinitas is an observability platform that helps you build better dApps. At the moment, for any given Solana Program, it will provide information about how the Solana Network execution affected the User Experience. So you can get a glimpse of how the UX experience feels for your dApp and eventually respond to incidents before they become problems.
+              sx={{
+                mb: 1,
+                fontSize: '1.5rem',
+                color: 'white',
+              }}
+            >
+              <span style={{ fontWeight: 'bold' }}>
+                Encinitas is an observability platform that helps you monitor the User Experience in your dApps.
+              </span>
+            </Typography>
+            <br/>
+            <Typography
+              component="h2"
+              sx={{
+                mb: 1,
+                fontSize: '1.2rem',
+                color: 'white',
+              }}
+            >Currently, for any given Solana Program, it provides metrics about how the Solana Network execution affected the user's transaction. So you can get a glimpse of how the UX experience feels for your dApp and eventually respond to incidents before they become problems, Ex, Using priority fees.
             </Typography>
             <br/>
             <Typography
@@ -171,8 +188,7 @@ function Home({ adjustDrawerVisibility }: HomeProps) {
                   Continue
                 </Button>
               </Box>
-              <Typography variant="h6" sx={{ mt: 4, mb: 2, color: 'white' }}>
-              For the moment you can select our demo over testnet for the Pyth Oracle Program:
+              <Typography variant="h6" sx={{ mt: 4, mb: 2, color: 'white' }}>For the moment, you can check our demo over testnet for the Pyth Oracle Program:
               </Typography>
                 <Button
                   onClick={() => navigate('/dashboard')}

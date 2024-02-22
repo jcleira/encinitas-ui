@@ -13,6 +13,9 @@ import {
   ListItemText
 } from '@mui/material';
 
+import InfoIcon from '@mui/icons-material/Info';
+import Tooltip from '@mui/material/Tooltip';
+
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts/core';
 
@@ -48,7 +51,7 @@ function Transactions({ adjustDrawerVisibility }: TransactionsProps) {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch('http://localhost:3001/transactions/query')
+    fetch('https://api.encinitas.xyz/transactions/query')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -79,7 +82,21 @@ function Transactions({ adjustDrawerVisibility }: TransactionsProps) {
       <Grid container spacing={3}>
         <Grid item xs={12} md={6} lg={5}>
           <Card>
-            <CardHeader title="Throughput by requests per minute" />
+            <CardHeader
+              title={
+                <Typography variant="h6" component="div" sx={{ display: 'flex', alignItems: 'center' }}>
+                  Transaction instructions breakdown
+                  <Tooltip
+                    title={
+                      <Typography sx={{ fontSize: '1.0rem' }}>List of the top 10 transaction instructions and their impact (percentage) on the Transaction execution.
+                      </Typography>
+                    }
+                    >
+                    <InfoIcon sx={{ fontSize: '1.0em', ml: 1 }} />
+                  </Tooltip>
+                </Typography>
+              }
+            />
             <CardContent sx={{
               minHeight: '150px',
               display: 'flex',
@@ -100,7 +117,21 @@ function Transactions({ adjustDrawerVisibility }: TransactionsProps) {
         </Grid>
         <Grid item xs={12} md={6} lg={7}>
           <Card>
-            <CardHeader title="Top web transactions by percent of wall clock time" />
+            <CardHeader
+              title={
+                <Typography variant="h6" component="div" sx={{ display: 'flex', alignItems: 'center' }}>
+                  Instruction's performance
+                  <Tooltip
+                    title={
+                      <Typography sx={{ fontSize: '1.0rem' }}>Performance for the selected instruction within the Transaction execution.
+                      </Typography>
+                    }
+                    >
+                    <InfoIcon sx={{ fontSize: '1.0em', ml: 1 }} />
+                  </Tooltip>
+                </Typography>
+              }
+            />
             <CardContent sx={{
               minHeight: '300px',
               display: 'flex',
@@ -115,7 +146,21 @@ function Transactions({ adjustDrawerVisibility }: TransactionsProps) {
             </CardContent>
           </Card>
           <Card>
-            <CardHeader title="Throughput by requests per minute" />
+            <CardHeader
+              title={
+                <Typography variant="h6" component="div" sx={{ display: 'flex', alignItems: 'center' }}>
+                  Instruction's throughput
+                  <Tooltip
+                    title={
+                      <Typography sx={{ fontSize: '1.0rem' }}>Throughput for the selected instruction within the Transaction execution.
+                      </Typography>
+                    }
+                    >
+                    <InfoIcon sx={{ fontSize: '1.0em', ml: 1 }} />
+                  </Tooltip>
+                </Typography>
+              }
+            />
             <CardContent sx={{
               minHeight: '300px',
               display: 'flex',

@@ -56,7 +56,10 @@ const ChartPerformance: React.FC<ChartPerformanceProps> = ({ chartData }) => {
     {
       barGap: '0%',
       barCategoryGap: '0%',
-      type: 'bar',
+      type: 'line',
+      areaStyle: {
+        color: '#08ffee'
+      },
       name: 'Solana Program',
       stack: 'total',
       data: chartData.performance.solana,
