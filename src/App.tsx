@@ -21,10 +21,31 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import Transactions from './pages/Transactions/Transactions';
 
 export default function App() {
-  const [open, setOpen] = React.useState(true);
-  const [showDrawer, setShowDrawer] = React.useState(true);
-  const toggleDrawer = () => setOpen(!open);
+  const isMobile = window.innerWidth < 600;
+
+  const [open, setOpen] = React.useState(!isMobile);
+  const [showDrawer, setShowDrawer] = React.useState(!isMobile);
+  const toggleDrawer = () => {
+    if (!isMobile) {
+      setOpen(!open);
+    }
+  };
+
   const handleDrawerVisibility = (isVisible: boolean) => setShowDrawer(isVisible);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      const isMobileResize = window.innerWidth < 600;
+      setOpen(!isMobileResize);
+      setShowDrawer(!isMobileResize);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -37,10 +58,7 @@ export default function App() {
           <Box
             component="main"
             sx={{
-              backgroundColor: (theme) =>
-                theme.palette.mode === 'light'
-                  ? theme.palette.grey[100]
-                  : theme.palette.grey[900],
+              backgroundColor: (theme) => theme.palette.grey[900],
               flexGrow: 1,
               overflow: 'auto',
               height: '100vh',

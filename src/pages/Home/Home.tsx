@@ -112,7 +112,9 @@ function Home({ adjustDrawerVisibility }: HomeProps) {
       <Grid container spacing={6} sx={{ mt: 2 }}>
         <Grid item xs={12} md={6} lg={6}>
         <Box className="leftbox">
-          <img src={ mascotImage } alt="Mascot" style={{ width: '700px', height: 'auto' }} />
+          <img src={ mascotImage } alt="Mascot"
+            style={{ maxWidth: '100%', height: 'auto' }}
+          />
         </Box>
         </Grid>
         <Grid item xs={12} md={6} lg={6}>
@@ -150,9 +152,19 @@ function Home({ adjustDrawerVisibility }: HomeProps) {
               }}
             >Currently, for any given Solana Program, it provides metrics about how the Solana Network execution affected the user's transaction. So you can get a glimpse of how the UX experience feels for your dApp and eventually respond to incidents before they become problems, Ex, Using priority fees.
             </Typography>
-            <br/>
+            <Typography variant="h6" sx={{ mt: 4, mb: 2, color: 'white' }}>For the moment, you can check our demo over testnet for the Pyth Oracle Program:
+            </Typography>
+            <Button
+              onClick={() => navigate('/dashboard')}
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ color: "#FFF", mt: 3, mb: 2, bgcolor: '#4CAF50', '&:hover': { bgcolor: '#45a049' } }}
+            >
+              See Pyth Oracle Program Demo
+            </Button>
             <Typography
-              variant="h5"
+              variant="h6"
               component="h2"
               sx={{ mb: 2, color: 'white' }}>Here, you will be able to specify your Program Address:</Typography>
             <Box
@@ -188,17 +200,6 @@ function Home({ adjustDrawerVisibility }: HomeProps) {
                   Continue
                 </Button>
               </Box>
-              <Typography variant="h6" sx={{ mt: 4, mb: 2, color: 'white' }}>For the moment, you can check our demo over testnet for the Pyth Oracle Program:
-              </Typography>
-                <Button
-                  onClick={() => navigate('/dashboard')}
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  sx={{ mt: 3, mb: 2, bgcolor: '#4CAF50', '&:hover': { bgcolor: '#45a049' } }}
-                >
-                  See Pyth Oracle Program Demo
-                </Button>
             </Box>
           </Box>
       </Grid>
