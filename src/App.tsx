@@ -69,10 +69,10 @@ export default function App() {
                 <Home adjustDrawerVisibility={handleDrawerVisibility.bind(null, false)} />
               } />
               <Route path="/dashboard" element={
-                <Dashboard adjustDrawerVisibility={handleDrawerVisibility.bind(null, true)} />
+                <Home adjustDrawerVisibility={handleDrawerVisibility.bind(null, false)} />
               } />
               <Route path="/transactions" element={
-                <Transactions adjustDrawerVisibility={handleDrawerVisibility.bind(null, true)} />
+                <Home adjustDrawerVisibility={handleDrawerVisibility.bind(null, false)} />
               } />
             </Routes>
           </Box>

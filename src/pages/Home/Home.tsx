@@ -146,23 +146,27 @@ function Home({ adjustDrawerVisibility }: HomeProps) {
             <Typography
               component="h2"
               sx={{
-                mb: 1,
                 fontSize: '1.2rem',
                 color: 'white',
               }}
             >Currently, for any given Solana Program, it provides metrics about how the Solana Network execution affected the user's transaction. So you can get a glimpse of how the UX experience feels for your dApp and eventually respond to incidents before they become problems, Ex, Using priority fees.
             </Typography>
-            <Typography variant="h6" sx={{ mt: 4, mb: 2, color: 'white' }}>For the moment, you can check our demo over testnet for the Pyth Oracle Program:
-            </Typography>
+            <Typography variant="h6" sx={{ mt: 4, color: 'white' }}>For the moment, you can check our demo over testnet for the Pyth Oracle Program:</Typography>
             <Button
               onClick={() => navigate('/dashboard')}
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ color: "#FFF", mt: 3, mb: 2, bgcolor: '#4CAF50', '&:hover': { bgcolor: '#45a049' } }}
-            >
-              See Pyth Oracle Program Demo
+              disabled={true}
+              sx={{ color: "#FFF", mt: 1, mb: 2, bgcolor: '#4CAF50', '&:hover': { bgcolor: '#45a049' } }}
+            >See Pyth Oracle Program Demo
             </Button>
+            <Typography
+              variant="h6"
+              component="h2"
+              sx={{ mb: 2, color: 'white' }}>
+              The demo is closed, please contact <a target="_blank" href="https://twitter.com/0xmadcat">0xMadCat in twitter</a> for more information.
+            </Typography>
             <Typography
               variant="h6"
               component="h2"
